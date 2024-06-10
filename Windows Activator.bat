@@ -30,8 +30,7 @@ for /f "tokens=*" %%a in ('wmic os get caption ^| findstr /r /v "^$"') do set "v
 
 REM Display system version
 echo System Version: %version%
+slmgr.vbs /dli 
 
 REM Display activation details and redirect errors to error.txt
-cscript //nologo "%windir%\system32\slmgr.vbs" /dli > error.txt 2>&1
-
-EXIT
+cscript //nologo "%windir%\system32\slmgr.vbs /dli 
